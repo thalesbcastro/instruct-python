@@ -7,7 +7,7 @@ def gravar_no_csv(email, website, hemisferio, username):
     fieldnames = ['email', 'website', 'hemisferio', 'username']
 
     try:
-        # Se não levantar a exceção, é porque ainda não foi criado, sendo necesário criar o cabeçalho
+        # Se levantar a exceção, é porque ainda não foi criado, sendo necesário criar o cabeçalho
         with open('jsonplaceholder.csv') as f:
             # Caso o arquivo já tenha sido criado, gravar com o mode='a'
             print('-----\nAdicionando dados novos ao arquivo-----')
@@ -65,9 +65,9 @@ if __name__ == '__main__':
 
     username = sys.argv[1]
     try:
-        # Quando da primeira vez, não vai existir o arquivo, uma exeção será levantada, e a funcção func_request deve
-        # ser chamada Se existir o arquivo, deve procurar primeiro nele. Caso encontre, imprime o que se quer e dar
-        # sai do programa Caso contrário, chama a função func_request para pegar lá no Link
+        # Quando da primeira vez, não vai existir o arquivo, uma exeção será levantada, e a função func_request deve
+        # ser chamada. Se existir o arquivo, deve-se procurar primeiro nele. Caso encontre, imprime o que se quer e 
+        # sai do programa. Caso contrário, chama a função func_request para pegar lá no Link.
 
         with open('jsonplaceholder.csv') as f:
             readed = csv.reader(f)
